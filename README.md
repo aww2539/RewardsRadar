@@ -6,7 +6,7 @@
 
 ##### Install [pipenv](https://pipenv.pypa.io/en/latest/installation.html)
 ```bash
-pip install pipenv --user
+pip install pipenv
 ```
 
 ##### Activate shell
