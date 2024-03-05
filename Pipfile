@@ -19,3 +19,4 @@ python_version = "3"
 
 [scripts]
 scrape = "python scrape.py"
+db_test = "python test_db_conn.py"
