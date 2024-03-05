@@ -1,6 +1,7 @@
 # RewardsRadar
 
 ### Retrieve up to date cash back categories and percentages for Chase credit cards and insert data into AWS RDS DB.
+![image](https://github.com/aww2539/RewardsRadar/assets/52324276/e0c167ec-ec38-4c7b-975a-657e452ea2d7)
 
 ### To run:
 
@@ -26,3 +27,4 @@ Create a `.env` file from `.env.example` and alter variables accordingly.
 ```bash
 pipenv run scrape
 ```
+
