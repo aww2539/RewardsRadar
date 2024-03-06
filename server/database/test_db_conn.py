@@ -3,20 +3,20 @@ import pymysql
 from dotenv import load_dotenv
 
 load_dotenv()
-host = getenv('DB_HOST')
-port = int(getenv('DB_PORT'))
-user = getenv('DB_USER')
-password = getenv('DB_PASSWORD')
-database = getenv('DB_NAME')
+DB_HOST = getenv('DB_HOST')
+DB_PORT = int(getenv('DB_PORT'))
+DB_USER = getenv('DB_USER')
+DB_PASSWORD = getenv('DB_PASSWORD')
+DB_NAME = getenv('DB_NAME')
 
 def test_db_conn():
 
     conn = pymysql.connect(
-        host=host,
-        port=port,
-        user=user,
-        password=password,
-        database=database
+        host=DB_HOST,
+        port=DB_PORT,
+        user=DB_USER,
+        password=DB_PASSWORD,
+        database=DB_NAME
     )
 
     if conn.open:
