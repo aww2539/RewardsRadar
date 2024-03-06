@@ -1,7 +1,0 @@
-name: 'autopep8'
-description: 'Automatically formats Python code to conform to the PEP 8 style guide.'
-runs:
-  using: 'docker'
-  image: 'docker://peterevans/autopep8:2.0.0'
-  args:
-    - ${{ inputs.args }}
