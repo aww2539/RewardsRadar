@@ -13,6 +13,7 @@ python-dotenv = "*"
 flask = "*"
 importlib-metadata = "*"
 flask-restful = "*"
+flask-cors = "*"
 
 [dev-packages]
 pylint = "*"
