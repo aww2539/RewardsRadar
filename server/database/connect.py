@@ -10,7 +10,6 @@ DB_USER = getenv('DB_USER')
 DB_PASSWORD = getenv('DB_PASSWORD')
 DB_NAME = getenv('DB_NAME')
 
-
 def connect_to_db():
     conn = pymysql.connect(
         host=DB_HOST,
@@ -25,5 +24,5 @@ def connect_to_db():
         print("Connected To Database: ", conn.host_info)
     else:
         print("Connection Failed")
-
+    
     return conn
