@@ -27,12 +27,12 @@ def create_table():
                 id MEDIUMINT NOT NULL AUTO_INCREMENT,
                 card_id VARCHAR(255) NOT NULL,
                 name TEXT NOT NULL,
-                reward_1 TEXT,
-                reward_2 TEXT,
-                reward_3 TEXT,
-                reward_4 TEXT,
-                reward_5 TEXT,
-                reward_6 TEXT,
+                reward_1 TEXT DEFAULT NULL,
+                reward_2 TEXT DEFAULT NULL,
+                reward_3 TEXT DEFAULT NULL,
+                reward_4 TEXT DEFAULT NULL,
+                reward_5 TEXT DEFAULT NULL,
+                reward_6 TEXT DEFAULT NULL,
                 PRIMARY KEY (id),
                 UNIQUE KEY (card_id)
 
@@ -45,6 +45,7 @@ def create_table():
         print("Not connected to DB")
 
 def insert_cards(card_dict):
+    print(card_dict[4])
     if conn.open:
         cursor = conn.cursor()
 
@@ -52,7 +53,15 @@ def insert_cards(card_dict):
             INSERT IGNORE INTO chase_cards (
                 card_id, name, reward_1, reward_2, reward_3, reward_4, reward_5, reward_6
             ) 
-            VALUES (%s, %s, %s, %s, %s, %s ,%s, %s)
+            VALUES 
+                (%s, %s, %s, %s, %s, %s ,%s, %s)
+            ON DUPLICATE KEY UPDATE
+                reward_1 = VALUES(reward_1),
+                reward_2 = VALUES(reward_2),
+                reward_3 = VALUES(reward_3),
+                reward_4 = VALUES(reward_4),
+                reward_5 = VALUES(reward_5),
+                reward_6 = VALUES(reward_6);
         '''
 
         cursor.executemany(insert_statement, card_dict)
