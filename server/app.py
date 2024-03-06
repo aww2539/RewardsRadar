@@ -13,4 +13,3 @@ connect_to_db()
 # Create API
 print("Creating API....")
 create_resources(app)
-

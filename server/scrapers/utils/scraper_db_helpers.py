@@ -18,6 +18,7 @@ conn = connect(
     database=database
 )
 
+
 def create_table():
     if conn.open:
         cursor = conn.cursor()
@@ -43,6 +44,7 @@ def create_table():
         cursor.close()
     else:
         print("Not connected to DB")
+
 
 def insert_cards(card_dict):
     print(card_dict[4])

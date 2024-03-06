@@ -14,8 +14,9 @@ class ChaseApi(Resource):
 
                 cursor.execute(sql, id)
                 results = cursor.fetchall()
-        
+
         return results
+
 
 class ChaseListApi(Resource):
     def get(self):
@@ -29,4 +30,3 @@ class ChaseListApi(Resource):
                 results = cursor.fetchall()
 
         return results
-
